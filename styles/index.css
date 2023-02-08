@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+header{
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(28, 40, 36, 0.322);
+    background-color: #EEF1F6;
+}
+header .menuContainer{
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    font-family:'Lobster', cursive;
+    color: #407c87;
+    text-decoration: none;
+    font-size: 20px;
+}
+header .menuContainer nav a{
+    padding: 0 0.5rem;
+    color:#407c87;
+    text-decoration: none;
+    font-family: 'Lobster', cursive;
+    font-size: 15px;
+}

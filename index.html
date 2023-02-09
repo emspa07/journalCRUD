@@ -26,37 +26,32 @@
           </ul>
     </nav>
   </header>
-  <div class="titleSection">
-    <h1>Diario online</h1>
-  </div>
-  <main>
+  <main>  
     <div class="container"> 
-      <div class="leftSide">       
-        <form id="form">
-          <label for="description"><h3>¿Cómo te sientes hoy?</h3></label>
-              <br><br>
+      <div class="card">
+        <h2>Diario online</h2>     
+        <form id="formJournal">
+          <br>
+          <label for="description"><h4>¿Cómo te sientes hoy?</h3></label>
+              <br>
               <textarea name="description" id="description" cols="30" rows="10"></textarea>
+              <br>
+          <label for="goal"><h4>Nuevo objetivo</h4></label>
+              <br>
+              <input type="text" id="goal" name="goal">
               <br><br>
-          <label for="task">Objetivos para este día</label>
-              <br><br>
-              <input type="text" id="task" name="task">
-              <br><br>
-          <label for="day">Introduce la fecha</label>  
-              <br><br>  
+          <label for="day"><h4>Fecha Límite</h4></label>  
+              <br> 
               <input type="date" id="day" name="day" class="day">
               <br><br>
-              <div id="msg"></div>
               <button type="submit">Agregar</button>
+              <button type="reset">Borrar todos los campos</button>
         </form>
       </div>
-      <div class="rightSide">
+      <div class="card" id="entries">
         <h4>Tus entradas</h4>
-        <div id="posts">
-
-        </div>  
       </div>
     </div>
-    
   </main>
   <footer>
     &copy; Copyright - 2023 Emily Paulin Cuenca 

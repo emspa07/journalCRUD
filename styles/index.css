@@ -91,6 +91,27 @@ main .container .card{
     border:1px solid rgb(15, 185, 176);
     border-radius: 0.2rem;
 }
+main .btnSubmit{
+    border-radius: 0.5rem;
+    background-color: #A5DBDD;
+    border-color: #A5DBDD;
+    cursor: pointer;
+}
+main .btnSubmit:hover{
+    background-color: rgb(83, 164, 143);
+    border-color: rgb(83, 164, 143);
+}
+main .btnReset{
+    border-radius: 0.5rem;
+    background-color: #407C87;
+    border-color: #407C87;
+    color: #EEF1F6;
+    cursor: pointer;
+}    
+main .btnReset:hover{
+    background-color: rgb(29, 143, 113);
+    border-color: rgb(29, 143, 113);
+}
 footer{
     width: 100%;
     height: auto;

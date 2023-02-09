@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lobster&display=swap" rel="stylesheet">
-    <title>Journal | Diario virtual</title>
+    <title>Journal | Diario online</title>
 </head>
 <body>
   <header>
@@ -26,19 +26,27 @@
           </ul>
     </nav>
   </header>
+  <div class="titleSection">
+    <h1>Diario online</h1>
+  </div>
   <main>
     <div class="container"> 
       <div class="leftSide">       
-        <h2>Diario</h2>
         <form id="form">
-          <label for="">Escribe cómo te sientes hoy</label>
+          <label for="description"><h3>¿Cómo te sientes hoy?</h3></label>
               <br><br>
-              <textarea name="" id="input" cols="30" rows="10"></textarea>
+              <textarea name="description" id="description" cols="30" rows="10"></textarea>
               <br><br>
-              <input type="date" class="dateInput" name="" id="dateInput" >
+          <label for="task">Objetivos para este día</label>
+              <br><br>
+              <input type="text" id="task" name="task">
+              <br><br>
+          <label for="day">Introduce la fecha</label>  
+              <br><br>  
+              <input type="date" id="day" name="day" class="day">
               <br><br>
               <div id="msg"></div>
-              <button type="submit">Publicar</button>
+              <button type="submit">Agregar</button>
         </form>
       </div>
       <div class="rightSide">

@@ -58,24 +58,32 @@ nav .menuLink{
   
     display: none;
 }
+.titleSection{
+    width: 100%;
+    height: auto;
+    margin: 3rem auto;
+    padding: 1rem;
+    background-color: #D3E1E2; 
+}
 main{
     width: 100%;
     height: auto;
-    position:relative;
-    
+    background-color: #D3E1E2;  
 }
+
 main .container{
     max-width: 80%;
-    height: auto;
-    display: flex;
-    gap: 50px;
-    margin: 5rem auto;
-    padding:1rem;
+    margin: 2rem auto;
+    padding: 0.15em;
+    grid-template-columns: 1fr,2fr;
 }
+
+
 footer{
     width: 100%;
     height: auto;
     padding: 1rem;
+    margin: -2rem;
     background: #EEF1F6;
     text-align: center;
     color: #407C87;

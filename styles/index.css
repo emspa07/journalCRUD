@@ -1,9 +1,7 @@
 *{
     margin: 0;
+    padding: 0;
     box-sizing: border-box; 
-}
-body{
-    padding: 90px 20px 0;
 }
 header{
     width: 100%;
@@ -59,8 +57,17 @@ nav .menuLink{
     cursor: pointer;
   
     display: none;
-  }
-
+}
+footer{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background: #EEF1F6;
+    text-align: center;
+    color: #407C87;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+}
 
 /*media queries*/
 @media (min-width:240px) and (max-width:720px) {
@@ -104,5 +111,8 @@ nav .menuLink{
     }
     .nav-toggle:focus:not(:focus-visible) {
         outline: none;
+    }
+    footer{
+        font-size: 0.9rem;
     }
 }      

@@ -1,74 +1,108 @@
 *{
     margin: 0;
-    padding: 0;
     box-sizing: border-box; 
+}
+body{
+    padding: 90px 20px 0;
 }
 header{
     width: 100%;
     height: auto;
-    padding: 0.5rem 0;
+    position: fixed;
     border-bottom: 1px solid rgba(28, 40, 36, 0.322);
     background-color: #EEF1F6;
+    top: 0;
+    left: 0;
 }
-header .menuContainer{
-    max-width: 80%;
-    margin: 0 auto;
+nav{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
 }
-header .logo {
-    font-family:'Lobster', cursive;
-    color: #407c87;
-    text-decoration: none;
+.logo{
+    font-family: 'Lobster', cursive;
     font-size: 20px;
-}
-header .menuContainer nav a{
-    padding: 0 0.5rem;
-    color:#407c87;
+    padding: 0 40px;
+    line-height: 50px;
     text-decoration: none;
-    font-family: 'Barlow Condensed', sans-serif;
+    color:#407C87;
+}
+.menuList{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;    
+}
+.menuItem{
     font-size: 18px;
+    margin: 0 10px;
+    line-height: 50px;
+    text-transform: uppercase;
+    width: max-content;
 }
-header .menuList li{
-    display: inline;
+nav .menuLink{
+    padding: 8px 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #407C87;
+    font-size: 18px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
 }
-header .navBar input, label{
+.nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+  
     display: none;
-}
-
+  }
 
 
 /*media queries*/
-@media (min-width:240px) and (max-width:720px){
-    header .menuContainer{
-        max-width: 90%;
+@media (min-width:240px) and (max-width:720px) {
+    body {
+        padding-top: 70px;
     }
-    header .menuList{
-        display: none;
-        top: 3.2rem;
-        right: 0;
-        position: absolute;
-        z-index: 1;
+    header {
+        height: 60px;
     }
-    header .menuList li{
-        padding: 1.1rem 1rem;
+    .logo {
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 60px;
     }
-    header #navmenu:checked~.menuList {
-        width: 100%;
-        height: 100vh;
-        display: flex;
+    .menuList{
         flex-direction: column;
-        text-align: start;
-        justify-content: start;
+        align-items: center;
+        margin: 0;
+        background-color: #EEF1F6;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+    
+        height: calc(100% - 60px);
+        overflow-y: auto;
+    
+        left: 100%;
+        transition: left 0.3s;
     }
-    header .menuContainer .btn-nav{
-        display: flex;
-        font-size: 1rem;
-        user-select: none;
-        cursor:pointer;
+    .menuItem{
+        line-height: 70px;
     }
-    header .logo{
-        font-size: 12px;
+    .nav-toggle {
+        display: block;
+        color: black;
+        font-size: 25px;
     }
-}
+    .menuList_visible{
+        left: 0;
+    }
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+}      

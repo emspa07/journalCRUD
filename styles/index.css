@@ -58,6 +58,20 @@ nav .menuLink{
   
     display: none;
 }
+main{
+    width: 100%;
+    height: auto;
+    position:relative;
+    
+}
+main .container{
+    max-width: 80%;
+    height: auto;
+    display: flex;
+    gap: 50px;
+    margin: 5rem auto;
+    padding:1rem;
+}
 footer{
     width: 100%;
     height: auto;

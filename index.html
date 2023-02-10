@@ -33,23 +33,25 @@
         <form id="formJournal">
           <br>
           <label for="description"><h4>¿Cómo te sientes hoy?</h3></label>
-              <br>
-              <textarea name="description" id="description" cols="30" rows="10"></textarea>
-              <br>
+              <input type="text" name="description" id="description">
           <label for="goal"><h4>Nuevo objetivo</h4></label>
-              <br>
               <input type="text" id="goal" name="goal">
-              <br><br>
           <label for="day"><h4>Fecha Límite</h4></label>  
-              <br> 
               <input type="date" id="day" name="day" class="day">
-              <br><br>
-              <button type="submit" class="btnSubmit" id="btnSubmit">Agregar</button>
-              <button type="reset" class="btnReset" id="btnReset">Borrar todos los campos</button>
         </form>
+        <button type="add" class="btnAdd" id="btnAdd">Agregar</button>
       </div>
       <div class="card" id="entries">
         <h4>Tus entradas</h4>
+          <div>
+            <span class="descriptionEnt">Entrada 1</span>
+            <p class="goalEnt">Crear un hábito</p>
+            <span class="dayEnt">2022-1-20</span>
+            <span class="options">
+              <i class="fa-regular fa-pen-to-square"></i>
+              <i class="fa-solid fa-trash-can"></i>
+            </span>
+          </div>
       </div>
     </div>
   </main>

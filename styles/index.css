@@ -59,7 +59,7 @@ nav .menuLink{
     display: none;
 }
 main{
-    margin: 3rem auto;
+    margin: 5rem auto;
     width: 100%;
     max-width: 2040px;
     min-height: 100vh;
@@ -70,8 +70,8 @@ main{
     background-color: white;
 }
 main .container{
-    width: 400px;
-    height: 600px;
+    width: 500px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,26 +91,36 @@ main .container .card{
     border:1px solid rgb(15, 185, 176);
     border-radius: 0.2rem;
 }
-main .btnSubmit{
-    border-radius: 0.5rem;
+main .btnAdd{
+    border-radius: 10rem;
     background-color: #A5DBDD;
     border-color: #A5DBDD;
     cursor: pointer;
 }
-main .btnSubmit:hover{
-    background-color: rgb(83, 164, 143);
-    border-color: rgb(83, 164, 143);
-}
-main .btnReset{
-    border-radius: 0.5rem;
+main .btnAdd:hover{
     background-color: #407C87;
     border-color: #407C87;
-    color: #EEF1F6;
+}
+#entries{
+    display: grid;
+    gap: 14px;
+}
+#entries div{
+    background-color:#A5DBDD;
+    border: 3px solid   #407C87;;
+    padding: 3px;
+    border-radius: 6px;
+    display: grid;
+    gap: 2px;
+}
+.dayEnt{
+    color: rgb(132, 130, 130);
+}
+.options{
+    justify-self: center;
+    display: flex;
+    gap:1rem;
     cursor: pointer;
-}    
-main .btnReset:hover{
-    background-color: rgb(29, 143, 113);
-    border-color: rgb(29, 143, 113);
 }
 footer{
     width: 100%;

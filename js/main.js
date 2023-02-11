@@ -27,6 +27,7 @@ let createTask = () => {
     data.map ((x,y)=>{
         return (tasks.innerHTML +=  `<div id=${y}> 
         <span>${x.text}</span> 
+        <span>${x.day}</span> 
         <span class="opciones"><i onclick="editTask(this)" class="fa-regular fa-pen-to-square"></i>
         <i onClick = "deleteTask(this);createTask()" class="fa-solid fa-trash-can"></i></div>`)
     })

@@ -1,69 +1,62 @@
-let descriptionInput = document.getElementById ('description')
-let goalInput = document.getElementById('goal')
-let dayInput = document.getElementById('day')
+const form= document.getElementById('formJournal')
+const inputTask = document.getElementById('goal')
+const inputDay = document.getElementById('day')
+const tasks = document.getElementById('entries')
 
-let btnAdd = document.getElementById('btnAdd')
 
-let formJournal = document.getElementById('formJournal')
-let entriesDiv = document.getElementById('entries')
-
-document.addEventListener('DOMContentLoaded', () => {
-    let tasks = JSON.parse(localStorage.getItem('tasks'))
-    
-    if (tasks === null) {
-        let paragraph = document.createElement("p")
-        let textParagraph = document.createTextNode("No hay entradas en tu journal")
-        
-        paragraph.appendChild(textParagraph)
-        entriesDiv.append(paragraph)
-    } else {
-        for (let i = 0; i <= tasks.length; i++){
-            let taskDiv = document.createElement("div")
-            let textDescriptionGoal = document.createTextNode(`${tasks[i].description}-${tasks[i].goal} `)
-            
-            let buttonDelete = document.createElement('button')
-            let textButtonDelete = document.createTextNode('Eliminar')
-            buttonDelete.appendChild(textButtonDelete)
-
-            taskDiv.appendChild(textDescriptionGoal)
-            taskDiv.appendChild(buttonDelete)
-
-            entriesDiv.appendChild(taskDiv)
-        }
-    }
-
-    btnAdd.addEventListener('click', (e) => {
-        let tasks = JSON.parse(localStorage.getItem('tasks')) || []
-
-        let description = descriptionInput.value
-        let goal = goalInput.value
-        let day = dayInput.value
-
-        let task = {
-            "description": description,
-            "goal": goal,
-            "day": day
-        }
-        console.log(task)
-
-        tasks.push(task)
-
-        console.log(tasks)
-
-        localStorage.setItem('tasks', JSON.stringify(tasks))
-
-        for (let i = 0; i <= tasks.length; i++){
-            let taskDiv = document.createElement("div")
-            let textDescriptionGoal = document.createTextNode(`${tasks[i].description}-${tasks[i].goal} `)
-            
-            let buttonDelete = document.createElement('button')
-            let textButtonDelete = document.createTextNode('Eliminar')
-            buttonDelete.appendChild(textButtonDelete)
-
-            taskDiv.appendChild(textDescriptionGoal)
-            taskDiv.appendChild(buttonDelete)
-
-            entriesDiv.appendChild(taskDiv)
-        }
-    })
+form.addEventListener('submit', function(event){
+    event.preventDefault()
+    acceptData()
+    event.target.reset()
 })
+
+let data=[]
+let acceptData = () => {
+    data.push({
+     text: inputTask.value,   
+     day: inputDay.value
+    })
+  localStorage.setItem("data", JSON.stringify(data))
+  console.log (data)  
+
+  createTask()
+}
+
+let createTask = () => {
+    tasks.innerHTML = ""
+    data.map ((x,y)=>{
+        return (tasks.innerHTML +=  `<div id=${y}> 
+        <span>${x.text}</span> 
+        <span class="opciones"><i onclick="editTask(this)" class="fa-regular fa-pen-to-square"></i>
+        <i onClick = "deleteTask(this);createTask()" class="fa-solid fa-trash-can"></i></div>`)
+    })
+
+    resetForm();
+}
+
+let deleteTask = (e) =>{
+e.parentElement.parentElement.remove ()
+  data.splice(e.parentElement.parentElement.id, 1)
+  localStorage.setItem("data", JSON.stringify(data))
+  console.log(data)
+}
+
+let editTask = (e) =>{
+    let selectedTask = e.parentElement.parentElement
+
+    inputTask.value = selectedTask.children[0].innerHTML,
+    inputDay.value = selectedTask.children[1].innerHTML
+
+    deleteTask(e)
+}
+
+let resetForm = () => {
+    inputTask.value = ""
+    inputDay.value = ""
+}
+
+(() => {
+    data = JSON.parse(localStorage.getItem("data")) || []
+    createTask()
+    console.log(data)
+  }) ()

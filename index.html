@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Lobster&display=swap" rel="stylesheet">
-    <title>Journal | Diario online</title>
+    <title>Journal | Planificador semanal</title>
 </head>
 <body>
   <header>
@@ -29,29 +29,19 @@
   <main>  
     <div class="container"> 
       <div class="card">
-        <h2>Diario online</h2>     
+        <h2>Organizador online</h2>     
         <form id="formJournal">
           <br>
-          <label for="description"><h4>¿Cómo te sientes hoy?</h3></label>
-              <input type="text" name="description" id="description">
-          <label for="goal"><h4>Nuevo objetivo</h4></label>
-              <input type="text" id="goal" name="goal">
+          <label for="goal"><h4>Ingresa tus objetivos...</h4></label>
+              <input type="text" id="goal" name="goal" required>
           <label for="day"><h4>Fecha Límite</h4></label>  
-              <input type="date" id="day" name="day" class="day">
+              <input type="date" id="day" name="day" class="day" required>
+            <button type="add" class="btnAdd" id="btnAdd">Agregar</button>
         </form>
-        <button type="add" class="btnAdd" id="btnAdd">Agregar</button>
       </div>
+      <h3>Tus Metas</h3>
       <div class="card" id="entries">
-        <h4>Tus entradas</h4>
-          <div>
-            <span class="descriptionEnt">Entrada 1</span>
-            <p class="goalEnt">Crear un hábito</p>
-            <span class="dayEnt">2022-1-20</span>
-            <span class="options">
-              <i class="fa-regular fa-pen-to-square"></i>
-              <i class="fa-solid fa-trash-can"></i>
-            </span>
-          </div>
+        
       </div>
     </div>
   </main>
